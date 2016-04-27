@@ -1,0 +1,33 @@
+{
+  "name": "alaska-email",
+  "version": "0.1.0",
+  "description": "Alaska email service",
+  "keywords": [
+    "alaska",
+    "alaska-service"
+  ],
+  "main": "lib/alaska-email.js",
+  "scripts": {
+    "build": "babel ./src --out-dir ./lib",
+    "watch": "babel ./src --out-dir ./lib -w",
+    "prebuild": "rimraf lib",
+    "prepublish": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maichong/alaska-email.git"
+  },
+  "author": {
+    "email": "liang@maichong.it",
+    "name": "liang",
+    "url": "https://github.com/liangxingchen"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/maichong/alaska-email/issues"
+  },
+  "homepage": "https://github.com/maichong/alaska-email#readme",
+  "peerDependencies": {
+    "alaska": "*"
+  }
+}
