@@ -5,5 +5,15 @@
  */
 
 export default {
-  prefix: false
+  prefix: false,
+
+  /**
+   * 短信发送驱动
+   */
+  drivers: {
+    test: {
+      label: 'Test',
+      type: 'alaska-email-test'
+    }
+  }
 };

@@ -26,9 +26,39 @@ export default class Email extends service.Model {
       label: 'Subject',
       type: String
     },
+    driver: {
+      label: 'Driver',
+      type: 'select',
+      options: service.driversOptions,
+      default: service.defaultDriver.key
+    },
     content: {
       label: 'Content',
       type: 'html'
+    },
+    createdAt: {
+      label: 'Created At',
+      type: Date
     }
   };
+
+  preSave() {
+    if (!this.createdAt) {
+      this.createdAt = new Date;
+    }
+  }
+}
+
+let locales = alaska.main.config('locales');
+
+if (locales && locales.length > 1) {
+  Email.fields.content.help = 'Default';
+  locales.forEach(locale => {
+    Email.fields['content_' + locale.replace('-', '_')] = {
+      label: 'Content',
+      type: String,
+      multiLine: true,
+      help: service.t('lang', locale)
+    };
+  });
 }
