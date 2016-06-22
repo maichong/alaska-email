@@ -1,6 +1,6 @@
 {
   "name": "alaska-email",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "description": "Alaska email service",
   "keywords": [
     "alaska",
@@ -29,5 +29,9 @@
   "homepage": "https://github.com/maichong/alaska-email#readme",
   "peerDependencies": {
     "alaska": "*"
+  },
+  "dependencies": {
+    "alaska-field-html": "^0.9.1",
+    "alaska-field-mixed": "^0.9.1"
   }
 }

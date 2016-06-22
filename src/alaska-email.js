@@ -25,12 +25,13 @@ export default class EmailService extends alaska.Service {
     let driversMap = {};
     _.forEach(drivers, (driver, key) => {
       let label = driver.label || key;
+      driver.key = key;
       driversOptions.push({ label, value: key });
       if (driver.send) {
         //已经实例化的driver
       } else if (driver.type) {
         let Driver = require(driver.type).default;
-        driver = new Driver(this);
+        driver = new Driver(this, driver);
       } else {
         throw new Error('invalid email driver config ' + key);
       }

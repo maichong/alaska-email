@@ -40,7 +40,7 @@ export default class Send extends service.Sled {
 
     if (to && typeof to === 'object' || !Array.isArray(to) && to.email) {
       if (to.displayName) {
-        to = `${to.displayName}<${to.email}>`;
+        to = `"${to.displayName}" <${to.email}>`;
       } else {
         to = to.email;
       }

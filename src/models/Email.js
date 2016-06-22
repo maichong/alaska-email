@@ -12,6 +12,15 @@ export default class Email extends service.Model {
   static defaultSort = '-sort';
   static searchFields = 'title subject content';
 
+  static actions = {
+    test: {
+      title: 'Test Send',
+      sled: 'Test',
+      style: 'success',
+      depends: 'testTo'
+    }
+  };
+
   static fields = {
     _id: {
       type: String,
@@ -32,13 +41,24 @@ export default class Email extends service.Model {
       options: service.driversOptions,
       default: service.defaultDriver.key
     },
-    content: {
-      label: 'Content',
-      type: 'html'
-    },
     createdAt: {
       label: 'Created At',
       type: Date
+    },
+    testTo: {
+      label: 'Test Send To',
+      type: String,
+      private: true
+    },
+    testData: {
+      label: 'Test Template Variables',
+      type: Object,
+      private: true,
+      default: {}
+    },
+    content: {
+      label: 'Content',
+      type: 'html'
     }
   };
 
