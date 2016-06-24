@@ -7,6 +7,12 @@
 export default {
   prefix: false,
 
+  services: [
+    {
+      id: 'alaska-user',
+      alias: 'user'
+    }
+  ],
   /**
    * 邮件发送驱动
    */
