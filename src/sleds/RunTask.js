@@ -4,7 +4,10 @@
  * @author Liang <liang@maichong.it>
  */
 
-export default class RunTask extends service.Sled {
+import alaska from 'alaska';
+import service from '../';
+
+export default class RunTask extends alaska.Sled {
   async exec(data) {
     let task = data.emailTask;
 

@@ -4,9 +4,11 @@
  * @author Liang <liang@maichong.it>
  */
 
+import alaska from 'alaska';
+import service from '../';
 import Email from '../models/Email';
 
-export default class Send extends service.Sled {
+export default class Send extends alaska.Sled {
   /**
    * 发送邮件
    * @param data

@@ -4,11 +4,14 @@
  * @author Liang <liang@maichong.it>
  */
 
-const User = service.model('user.User');
+import alaska from 'alaska';
+import service from '../';
+import User from 'alaska-user/models/User';
 
-export default class EmailTask extends service.Model {
+export default class EmailTask extends alaska.Model {
 
   static label = 'Email Task';
+  static icon = 'paper-plane';
   static title = 'title';
   static defaultColumns = 'title email state progress total createdAt';
   static defaultSort = '-sort';

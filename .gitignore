@@ -34,4 +34,13 @@ node_modules
 
 .idea/
 
-lib/
+/lib/
+/api/
+/controllers/
+/config/
+/locales/
+/middlewares/
+/models/
+/sleds/
+/views/
+/index.js

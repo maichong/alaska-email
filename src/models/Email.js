@@ -4,9 +4,13 @@
  * @author Liang <liang@maichong.it>
  */
 
-export default class Email extends service.Model {
+import alaska from 'alaska';
+import service from '../';
+
+export default class Email extends alaska.Model {
 
   static label = 'Email';
+  static icon = 'envelope';
   static title = 'title';
   static defaultColumns = '_id title subject';
   static defaultSort = '-sort';

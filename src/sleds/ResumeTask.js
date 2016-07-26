@@ -4,7 +4,10 @@
  * @author Liang <liang@maichong.it>
  */
 
-export default class ResumeTask extends service.Sled {
+import alaska from 'alaska';
+import service from '../';
+
+export default class ResumeTask extends alaska.Sled {
   async exec(data) {
     let task = data.emailTask;
 

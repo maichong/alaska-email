@@ -7,7 +7,7 @@
 import alaska from 'alaska';
 import _ from 'lodash';
 
-export default class EmailService extends alaska.Service {
+class EmailService extends alaska.Service {
   constructor(options, alaska) {
     options = options || {};
     options.id = options.id || 'alaska-email';
@@ -108,3 +108,5 @@ export default class EmailService extends alaska.Service {
     task.save();
   }
 }
+
+export default new EmailService();

@@ -4,7 +4,10 @@
  * @author Liang <liang@maichong.it>
  */
 
-export default class Test extends service.Sled {
+import alaska from 'alaska';
+import service from '../';
+
+export default class Test extends alaska.Sled {
   async exec(data) {
     let email = data.email;
     await service.run('Send', {
