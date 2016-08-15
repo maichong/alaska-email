@@ -81,8 +81,8 @@ export default class EmailTask extends alaska.Model {
     },
     filters: {
       label: 'Filters',
-      type: Object,
-      default: {}
+      type: 'filter',
+      ref: 'alaska-user.User'
     },
     progress: {
       label: 'Progress',
@@ -115,7 +115,7 @@ export default class EmailTask extends alaska.Model {
       this.nextAt = new Date;
     }
     if (!this.total && !this.state) {
-      this.total = await User.where(this.filters || {}).where('email').ne(null).count();
+      this.total = await User.where(this._.filters.filter() || {}).where('email').ne(null).count();
     }
   }
 

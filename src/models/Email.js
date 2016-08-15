@@ -41,9 +41,7 @@ export default class Email extends alaska.Model {
     },
     driver: {
       label: 'Driver',
-      type: 'select',
-      options: service.driversOptions,
-      default: service.defaultDriver.key
+      type: 'select'
     },
     createdAt: {
       label: 'Created At',
@@ -71,18 +69,4 @@ export default class Email extends alaska.Model {
       this.createdAt = new Date;
     }
   }
-}
-
-let locales = alaska.main.config('locales');
-
-if (locales && locales.length > 1) {
-  Email.fields.content.help = 'Default';
-  locales.forEach(locale => {
-    Email.fields['content_' + locale.replace('-', '_')] = {
-      label: 'Content',
-      type: String,
-      multiLine: true,
-      help: service.t('lang', locale)
-    };
-  });
 }
